@@ -20,8 +20,8 @@ resource "harness_encrypted_text" "github_token" {
 
 resource "harness_git_connector" "demo" {
   name = "demo-git-connector"
-  url = "https://github.com/harness-io/terraform-demo"
-  branch = "main"
+  url = var.repository_url
+  branch = var.repository_branch
   username = var.github_username
   password_secret_id = harness_encrypted_text.github_token.id
   url_type = "REPO"
