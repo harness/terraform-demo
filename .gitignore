@@ -1,0 +1,38 @@
+*.dll
+*.exe
+.env
+.DS_Store
+example.tf
+terraform.tfplan
+terraform.tfstate
+bin/
+dist/
+modules-dev/
+/pkg/
+vendor/
+website/.vagrant
+website/.bundle
+website/build
+website/node_modules
+.vagrant/
+*.backup
+./*.tfstate
+.terraform/
+*.log
+*.bak
+*~
+.*.swp
+.idea
+*.iml
+*.test
+*.iml
+.vscode
+*debug*
+website/vendor
+
+# Test exclusions
+.terraform*
+
+# Keep windows files with windows line endings
+*.winfile eol=crlf
+
