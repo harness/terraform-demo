@@ -11,6 +11,11 @@ variable "application_name" {
   default = "Harness Terraform Demo"
 }
 
+variable "prefix" {
+  description = "A prefix to use to ensure account level settings are unique (i.e. cloud providers, secrets, connectors, erc.)."
+  default = "demo"
+}
+
 variable "repository_url" {
   description = "The url of the repository to be cloned."
   default = "https://github.com/harness-io/terraform-demo"

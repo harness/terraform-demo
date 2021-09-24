@@ -3,7 +3,7 @@ data "harness_secret_manager" "default" {
 }
 
 resource "harness_encrypted_text" "github_token" {
-  name              = "demo-github-token"
+  name              = "${var.prefix}-github-token"
   value 					  = var.github_token
   secret_manager_id = data.harness_secret_manager.default.id
 
@@ -19,7 +19,7 @@ resource "harness_encrypted_text" "github_token" {
 }
 
 resource "harness_git_connector" "demo" {
-  name = "demo-git-connector"
+  name = "${var.prefix}-git-connector"
   url = var.repository_url
   branch = var.repository_branch
   username = var.github_username

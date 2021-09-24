@@ -1,5 +1,5 @@
 resource "harness_cloudprovider_kubernetes" "demo" {
-  name = "Kubernetes Demo"
+  name = "${var.prefix}-kubernetes"
 
   authentication {
     delegate_selectors = ["k8s"]
