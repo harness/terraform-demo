@@ -20,7 +20,7 @@ resource "harness_encrypted_text" "github_token" {
 
 resource "harness_git_connector" "demo" {
   name = "demo-git-connector"
-  url = "https://github.com/harness-io/micah-demo"
+  url = "https://github.com/harness-io/terraform-demo"
   branch = "main"
   username = var.github_username
   password_secret_id = harness_encrypted_text.github_token.id
