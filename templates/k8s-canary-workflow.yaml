@@ -1,7 +1,6 @@
 harnessApiVersion: '1.0'
 type: CANARY
 concurrencyStrategy: INFRA
-envName: prod
 failureStrategies:
 - executionScope: WORKFLOW
   failureTypes:
