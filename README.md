@@ -1,5 +1,14 @@
 # Terraform Demo
 
+This project serves as an example of how to spin up a new project in Harness CD using the [Harness Terraform Provider](https://github.com/harness-io/terraform-provider-harness). This can be used as a starting point for onboarding a new team onto the platform.
+
+When you apply this module you will have a fully-functioning pipeline that will deploy an nginx service to dev, stage, and prod environments.
+
+## Pre-requisites
+
+To run this example it is assumed that you already have a delegate running in a Kubernetes cluster with a selector of `k8s`. 
+
+You will also need to create the following namespaces in the cluster if you want to run the example pipeline that is created: `dev`, `stage`, `prod`. 
 
 
 ## Variables
