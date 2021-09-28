@@ -2,7 +2,7 @@ terraform {
   required_providers {
     harness = {
       source = "harness-io/harness"
-      version = "0.0.10"
+      version = "~> 0.0.11"
     }
   }
 }
