@@ -11,13 +11,13 @@ pipelineStages:
   workflowVariables:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition
-    value: k8s-dev
+    value: ${dev_infra_name}
   - entityType: ENVIRONMENT
     name: Environment
     value: dev
   - entityType: SERVICE
     name: Service
-    value: ${Service}
+    value: $${Service}
 - type: ENV_STATE
   name: k8s-rolling-deployment-1
   parallel: false
@@ -28,13 +28,13 @@ pipelineStages:
   workflowVariables:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition
-    value: k8s-stage
+    value: ${stage_infra_name}
   - entityType: ENVIRONMENT
     name: Environment
     value: stage
   - entityType: SERVICE
     name: Service
-    value: ${Service}
+    value: $${Service}
 - type: APPROVAL
   name: Approval 2
   parallel: false
@@ -59,10 +59,10 @@ pipelineStages:
   workflowVariables:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition
-    value: k8s-prod
+    value: ${prod_infra_name}
   - entityType: ENVIRONMENT
     name: Environment
     value: prod
   - entityType: SERVICE
     name: Service
-    value: ${Service}
+    value: $${Service}

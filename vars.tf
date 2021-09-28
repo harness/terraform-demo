@@ -12,8 +12,8 @@ variable "application_name" {
 }
 
 variable "prefix" {
-  description = "A prefix to use to ensure account level settings are unique (i.e. cloud providers, secrets, connectors, erc.)."
-  default = "demo"
+  description = "A prefix to use to ensure account level settings are unique (i.e. cloud providers, secrets, connectors, etc.)."
+  default = "test"
 }
 
 variable "repository_url" {

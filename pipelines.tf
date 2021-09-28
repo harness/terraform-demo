@@ -10,17 +10,18 @@ resource "harness_yaml_config" "k8s_canary_workflow" {
   content = file("${path.module}/templates/k8s-canary-workflow.yaml")
 }
 
-resource "harness_yaml_config" "k8s_pipeline" {
-  // Our pipeline deploys to multiple environments/infras 
-  // so we need to make sure they're created beforehand
 
-  depends_on = [
-    harness_infrastructure_definition.k8s_dev,
-    harness_infrastructure_definition.k8s_stage,
-    harness_infrastructure_definition.k8s_prod,
-  ]
+data "template_file" "k8s_pipeline" {
+  template = "${file("${path.module}/templates/k8s-deployment-pipeline.yaml.tpl")}"
+  vars = {
+    dev_infra_name = harness_infrastructure_definition.k8s_dev.name
+    stage_infra_name = harness_infrastructure_definition.k8s_stage.name
+    prod_infra_name = harness_infrastructure_definition.k8s_prod.name
+  }
+}
 
+resource "harness_yaml_config" "k8s_pipeline" { 
   app_id = harness_application.demo.id
   path = "Setup/Applications/${harness_application.demo.name}/Pipelines/k8s-deployment.yaml"
-  content = file("${path.module}/templates/k8s-deployment-pipeline.yaml")
+  content = data.template_file.k8s_pipeline.rendered
 }
