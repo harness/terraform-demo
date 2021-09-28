@@ -2,7 +2,10 @@
 
 This project serves as an example of how to spin up a new project in Harness CD using the [Harness Terraform Provider](https://github.com/harness-io/terraform-provider-harness). This can be used as a starting point for onboarding a new team onto the platform.
 
-When you apply this module you will have a fully-functioning pipeline that will deploy an nginx service to dev, stage, and prod environments.
+When you apply this module you will have
+
+- A new application with a fully functioning pipeline that will deploy an nginx service to `dev`, `stage`, and `prod` environments.
+- A developer and administrator user group for the application.
 
 ## Pre-requisites
 
