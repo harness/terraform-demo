@@ -9,7 +9,7 @@ resource "harness_cloudprovider_kubernetes" "demo" {
     application_filter_type = "ALL"
     environment_filter_type = "NON_PRODUCTION_ENVIRONMENTS"
   }
-  
+
   usage_scope {
     application_filter_type = "ALL"
     environment_filter_type = "PRODUCTION_ENVIRONMENTS"
