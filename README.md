@@ -13,9 +13,10 @@ This product is not supported by the Harness Customer support team. If you have 
 
 ## Pre-requisites
 
-To run this example it is assumed that you already have a delegate running in a Kubernetes cluster with a selector of `k8s`. 
-
-You will also need to create the following namespaces in the cluster if you want to run the example pipeline that is created: `dev`, `stage`, `prod`. 
+- **Delegate**: You will need a delegate running in a Kubernetes cluster with a selector of `k8s`. 
+- **Namespaces**: You will need to create the following namespaces in the cluster if you want to run the example pipeline that is created: `dev`, `stage`, `prod`. 
+- **API Key**: You will need to create an api key by following [these instructions](https://docs.harness.io/article/smloyragsm-api-keys). For this example it should have the role of `Account Administrator`. You will need to set this using the environment variable `HARNESS_API_KEY`.
+- **Account Id**: This can be found in the URL of the Harness UI. The format is `https://app.harness.io/#/account/<ACCOUNT_ID>`. You will need to se this using the environment variable `HARNESS_ACCOUNT_ID`.
 
 
 ## Variables
