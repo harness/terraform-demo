@@ -9,6 +9,8 @@ resource "harness_application" "demo" {
     harness_git_connector.demo
   ]
 
-  name = var.application_name
+  name                         = var.application_name
+  is_manual_trigger_authorized = false
+  description                  = "Example application created with the Harness Terraform provider."
 }
 
