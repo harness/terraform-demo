@@ -12,4 +12,8 @@ resource "harness_cloudprovider_kubernetes" "demo" {
   usage_scope {
     environment_filter_type = "PRODUCTION_ENVIRONMENTS"
   }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
