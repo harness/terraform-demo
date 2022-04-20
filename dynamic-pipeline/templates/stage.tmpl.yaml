@@ -1,0 +1,17 @@
+- type: ENV_STATE
+  name: ${serviceName}
+  parallel: ${parallel}
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: Deploy ${envName}
+  workflowName: ${workflowName}
+  workflowVariables:
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: ${envName}
+  - entityType: SERVICE
+    name: Service
+    value: ${serviceName}
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_KUBERNETES
+    value: ${infraName}

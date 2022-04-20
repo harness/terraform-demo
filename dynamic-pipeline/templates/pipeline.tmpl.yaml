@@ -1,0 +1,4 @@
+harnessApiVersion: '1.0'
+type: PIPELINE
+pipelineStages:
+${stages}
