@@ -1,24 +1,25 @@
 
-variable "release_id" {}
+variable "release_id" {
+  description = "A unique identifier for the release."
+}
 
-variable "application_name" {}
+variable "application_name" {
+  default = "The name of the Harness Application to create the pipeline for."
+}
 
 variable "infradef" {
-  default = "k8s"
+  default = "The name of the infrastructure definition to use."
 }
 
 variable "environment" {
-  default = "dev"
+  default = "The name of the environment to deploy to."
 }
 
 variable "workflow_name" {
-  default = "rolling"
+  description = "The name of the workflow to use for each stage of the deployment."
 }
 
 variable "services" {
-  default = [
-    "nginx1",
-    "nginx2",
-    "nginx3",
-  ]
+  description = "A list of services to be deployed."
+  type = list(string)
 }
