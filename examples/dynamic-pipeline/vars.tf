@@ -23,3 +23,8 @@ variable "services" {
   description = "A list of services to be deployed."
   type = list(string)
 }
+
+variable "pipeline_prefix" {
+  description = "The prefix to use for the pipeline name."
+  default = "release"
+}

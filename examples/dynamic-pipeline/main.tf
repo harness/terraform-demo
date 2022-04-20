@@ -1,3 +1,7 @@
+locals {
+  pipeline_name = "${var.pipeline_prefix}_${var.environment}_${var.release_id}"
+}
+
 data "template_file" "stage" {
   count = "${length(var.services)}"
 

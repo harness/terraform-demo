@@ -1,3 +1,4 @@
-output "stage" {
-  value = data.template_file.pipeline.rendered
+output "pipeline_name" {
+  value = local.pipeline_name
 }
+
