@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "harness-delegate.fullname" . }}-configmap
+  labels:
+    {{- include "harness-delegate.labels" . | nindent 4 }}
+data:
+  ACCOUNT_ID: {{ .Values.accountId | quote }}
+  CDN_URL: {{ .Values.cdnUrl | quote }}
+  DELEGATE_CHECK_LOCATION: {{ .Values.delegateCheckLocation | quote }}
+  DELEGATE_NAME: {{ include "harness-delegate.fullname" . | quote }}
+  DELEGATE_PROFILE: {{ .Values.delegateProfile | quote }}
+  DELEGATE_STORAGE_URL: {{ .Values.delegateStorageUrl | quote }}
+  DELEGATE_TYPE: "KUBERNETES"
+  DEPLOY_MODE: "KUBERNETES"
+  ENABLE_CE: {{ .Values.enableCE | quote }}
+  GRPC_SERVICE_CONNECTOR_PORT: {{ .Values.grpcServiceConnectorPort | quote }}
+  GRPC_SERVICE_ENABLED: {{ .Values.grpcServiceEnabled | quote }}
+  HELM_DESIRED_VERSION: {{ .Values.helmDesiredVersion | quote }}
+  HELM_PATH: {{ .Values.helmPath | quote }}
+  HELM3_PATH: {{ .Values.helm3Path | quote }}
+  INSTALL_CLIENT_TOOLS_IN_BACKGROUND: {{ .Values.installClientToolsInBackground | quote }}
+  JAVA_OPTS: {{ .Values.javaOpts | quote }}
+  JRE_VERSION: {{ .Values.jreVersion | quote }}
+  KUBECTL_PATH: {{ .Values.kubectlPath | quote }}
+  KUSTOMIZE_PATH: {{ .Values.kustomizePath | quote }}
+  MANAGER_HOST_AND_PORT : {{ .Values.managerHostAndPort | quote }}
+  NO_PROXY: {{ .Values.noProxy | quote }}
+  OC_PATH: {{ .Values.ocPath | quote }}
+  POLL_FOR_TASKS: {{ .Values.pollForTasks | quote }}
+  PROXY_HOST: {{ .Values.proxyHost | quote }}
+  PROXY_MANAGER: {{ .Values.proxyManager | quote }}
+  PROXY_PORT: {{ .Values.proxyPort | quote }}
+  PROXY_SCHEME: {{ .Values.proxyScheme | quote }}
+  REMOTE_WATCHER_URL_CDN: {{ .Values.remoteWatcherUrlCdn | quote }}
+  USE_CDN: {{ .Values.useCdn | quote }}
+  WATCHER_CHECK_LOCATION: {{ .Values.watcherCheckLocation | quote }}
+  WATCHER_STORAGE_URL: {{ .Values.watcherStorageUrl | quote }}
