@@ -26,11 +26,11 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-# Account Id to which the delegate will be connecting
+# -- Account Id to which the delegate will be connecting
 accountId: ""
-# Account Secret
+# -- Account Secret
 accountSecret: ""
-# Delegate Token
+# -- Delegate Token
 delegateToken: ""
 
 # For connecting to Harness production SAAS environment, leave these
@@ -50,9 +50,9 @@ useCdn: true
 watcherCheckLocation: current.version
 watcherStorageUrl: https://app.harness.io/public/free/freemium/watchers
 
-# If the harness delegate should go through proxy then set it to true
+# -- If the harness delegate should go through proxy then set it to true
 proxyManager: "true"
-# If the proxy doesn't support web socket (wss) protocol then set it
+# -- If the proxy doesn't support web socket (wss) protocol then set it
 # to true
 pollForTasks: "false"
 
@@ -62,39 +62,42 @@ proxyPort: ""
 proxyUser: ""
 proxyPassword: ""
 
-# Allowed values are http or https
+# -- Allowed values are http or https
 proxyScheme: ""
 
-# Enter a comma separated list of suffixes for which proxy is not
+# -- Enter a comma separated list of suffixes for which proxy is not
 # required. Do not use leading wildcards (.company.com,specifichost)
 # (optional):
 noProxy: ""
 
-# Id of the delegate profile that needs to run when the delegate is
+# -- Id of the delegate profile that needs to run when the delegate is
 # coming up
 delegateProfile: ""
 
-# Helm version to be installed in delegate
+# -- Helm version to be installed in delegate
 helmDesiredVersion: ""
 
-# Path to helm2 and helm3 binaries to be used during k8s/helm deployments
+# -- Path to helm3 binaries to be used during k8s/helm deployments
 # otherwise harness installed default binaries will be used
 helm3Path: ""
+
+# -- Path to helm2 binaries to be used during k8s/helm deployments
+# otherwise harness installed default binaries will be used
 helmPath: ""
 
-# Path for custom kustomize binary on the delegate to be used for kustomize deployments
+# -- Path for custom kustomize binary on the delegate to be used for kustomize deployments
 # otherwise harness installed default binary will be used
 kustomizePath: ""
 
-# Path for custom oc binary on the delegate to be used for openshift deployments
+# -- Path for custom oc binary on the delegate to be used for openshift deployments
 # otherwise harness installed default binary will be used
 ocPath: ""
 
-# Path for custom kubectl binary on the delegate to be used for k8s deployments
+# -- Path for custom kubectl binary on the delegate to be used for k8s deployments
 # otherwise harness installed default binary will be used
 kubectlPath: ""
 
-# Controls if delegate client tools are installed in the background
+# -- Controls if delegate client tools are installed in the background
 # or they prevent delegate registering until they are installed. Default is in the background
 installClientToolsInBackground: true
 
